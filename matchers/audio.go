@@ -12,7 +12,7 @@ var (
 )
 
 var Audio = Map{
-	TypeMidi: Midi,
+	//TypeMidi: Midi,
 	TypeMp3:  Mp3,
 	TypeM4a:  M4a,
 	TypeOgg:  Ogg,
