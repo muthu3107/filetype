@@ -1,6 +1,6 @@
 package matchers
 
-import "github.com/h2non/filetype/matchers/isobmff"
+import "github.com/logicwonder/filetype/matchers/isobmff"
 
 var (
 	TypeJpeg     = newType("jpg", "image/jpeg")
@@ -19,19 +19,19 @@ var (
 )
 
 var Image = Map{
-	TypeJpeg:     Jpeg,
-	TypeJpeg2000: Jpeg2000,
-	TypePng:      Png,
-	TypeGif:      Gif,
-	TypeWebp:     Webp,
-	TypeCR2:      CR2,
-	TypeTiff:     Tiff,
-	TypeBmp:      Bmp,
-	TypeJxr:      Jxr,
-	TypePsd:      Psd,
-	TypeIco:      Ico,
-	TypeHeif:     Heif,
-	TypeDwg:      Dwg,
+	TypeJpeg: Jpeg,
+	//TypeJpeg2000: Jpeg2000,
+	TypePng:  Png,
+	TypeGif:  Gif,
+	TypeWebp: Webp,
+	//TypeCR2:      CR2,
+	TypeTiff: Tiff,
+	TypeBmp:  Bmp,
+	//TypeJxr:      Jxr,
+	TypePsd: Psd,
+	TypeIco: Ico,
+	//TypeHeif:     Heif,
+	//TypeDwg:      Dwg,
 }
 
 func Jpeg(buf []byte) bool {

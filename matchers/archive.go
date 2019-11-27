@@ -1,19 +1,17 @@
 package matchers
 
 var (
-	TypeEpub   = newType("epub", "application/epub+zip")
-	TypeZip    = newType("zip", "application/zip")
-	TypeTar    = newType("tar", "application/x-tar")
-	TypeRar    = newType("rar", "application/x-rar-compressed")
-	TypeGz     = newType("gz", "application/gzip")
-	TypeBz2    = newType("bz2", "application/x-bzip2")
-	Type7z     = newType("7z", "application/x-7z-compressed")
-	TypeXz     = newType("xz", "application/x-xz")
-	TypePdf    = newType("pdf", "application/pdf")
-	TypeExe    = newType("exe", "application/x-msdownload")
-	TypeSwf    = newType("swf", "application/x-shockwave-flash")
-	TypeRtf    = newType("rtf", "application/rtf")
-	TypeEot    = newType("eot", "application/octet-stream")
+	TypeEpub = newType("epub", "application/epub+zip")
+	TypeZip  = newType("zip", "application/zip")
+	TypeTar  = newType("tar", "application/x-tar")
+	TypeRar  = newType("rar", "application/x-rar-compressed")
+	TypeGz   = newType("gz", "application/gzip")
+	TypeBz2  = newType("bz2", "application/x-bzip2")
+	Type7z   = newType("7z", "application/x-7z-compressed")
+	TypeXz   = newType("xz", "application/x-xz")
+	TypePdf  = newType("pdf", "application/pdf")
+	TypeRtf  = newType("rtf", "application/rtf")
+
 	TypePs     = newType("ps", "application/postscript")
 	TypeSqlite = newType("sqlite", "application/x-sqlite3")
 	TypeNes    = newType("nes", "application/x-nintendo-nes-rom")
@@ -30,32 +28,29 @@ var (
 )
 
 var Archive = Map{
-	TypeEpub:   Epub,
-	TypeZip:    Zip,
-	TypeTar:    Tar,
-	TypeRar:    Rar,
-	TypeGz:     Gz,
-	TypeBz2:    Bz2,
-	Type7z:     SevenZ,
-	TypeXz:     Xz,
-	TypePdf:    Pdf,
-	TypeExe:    Exe,
-	TypeSwf:    Swf,
-	TypeRtf:    Rtf,
-	TypeEot:    Eot,
-	TypePs:     Ps,
-	TypeSqlite: Sqlite,
-	TypeNes:    Nes,
-	TypeCrx:    Crx,
-	TypeCab:    Cab,
-	TypeDeb:    Deb,
-	TypeAr:     Ar,
-	TypeZ:      Z,
-	TypeLz:     Lz,
-	TypeRpm:    Rpm,
-	TypeElf:    Elf,
-	TypeDcm:    Dcm,
-	TypeIso:    Iso,
+	TypeEpub: Epub,
+	TypeZip:  Zip,
+	TypeTar:  Tar,
+	TypeRar:  Rar,
+	TypeGz:   Gz,
+	TypeBz2:  Bz2,
+	Type7z:   SevenZ,
+	TypeXz:   Xz,
+	TypePdf:  Pdf,
+	TypeRtf:  Rtf,
+	//TypePs:     Ps,
+	//TypeSqlite: Sqlite,
+	//TypeNes:    Nes,
+	//TypeCrx:    Crx,
+	//TypeCab:    Cab,
+	//TypeDeb:    Deb,
+	TypeAr: Ar,
+	//TypeZ:      Z,
+	TypeLz: Lz,
+	//TypeRpm:    Rpm,
+	//TypeElf:    Elf,
+	//TypeDcm:    Dcm,
+	//TypeIso:    Iso,
 }
 
 func Epub(buf []byte) bool {
@@ -113,17 +108,6 @@ func Pdf(buf []byte) bool {
 		buf[2] == 0x44 && buf[3] == 0x46
 }
 
-func Exe(buf []byte) bool {
-	return len(buf) > 1 &&
-		buf[0] == 0x4D && buf[1] == 0x5A
-}
-
-func Swf(buf []byte) bool {
-	return len(buf) > 2 &&
-		(buf[0] == 0x43 || buf[0] == 0x46) &&
-		buf[1] == 0x57 && buf[2] == 0x53
-}
-
 func Rtf(buf []byte) bool {
 	return len(buf) > 4 &&
 		buf[0] == 0x7B && buf[1] == 0x5C &&
@@ -147,16 +131,6 @@ func Cab(buf []byte) bool {
 	return len(buf) > 3 &&
 		((buf[0] == 0x4D && buf[1] == 0x53 && buf[2] == 0x43 && buf[3] == 0x46) ||
 			(buf[0] == 0x49 && buf[1] == 0x53 && buf[2] == 0x63 && buf[3] == 0x28))
-}
-
-func Eot(buf []byte) bool {
-	return len(buf) > 35 &&
-		buf[34] == 0x4C && buf[35] == 0x50 &&
-		((buf[8] == 0x02 && buf[9] == 0x00 &&
-			buf[10] == 0x01) || (buf[8] == 0x01 &&
-			buf[9] == 0x00 && buf[10] == 0x00) ||
-			(buf[8] == 0x02 && buf[9] == 0x00 &&
-				buf[10] == 0x02))
 }
 
 func Ps(buf []byte) bool {
