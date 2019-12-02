@@ -1,5 +1,6 @@
 package matchers
 
+/*
 var (
 	TypeWoff  = newType("woff", "application/font-woff")
 	TypeWoff2 = newType("woff2", "application/font-woff")
@@ -43,3 +44,4 @@ func Otf(buf []byte) bool {
 		buf[2] == 0x54 && buf[3] == 0x4F &&
 		buf[4] == 0x00
 }
+*/

@@ -2,40 +2,40 @@ package matchers
 
 var (
 	TypeEpub = newType("epub", "application/epub+zip")
-	TypeZip  = newType("zip", "application/zip")
-	TypeTar  = newType("tar", "application/x-tar")
-	TypeRar  = newType("rar", "application/x-rar-compressed")
-	TypeGz   = newType("gz", "application/gzip")
-	TypeBz2  = newType("bz2", "application/x-bzip2")
-	Type7z   = newType("7z", "application/x-7z-compressed")
-	TypeXz   = newType("xz", "application/x-xz")
+	//TypeZip  = newType("zip", "application/zip")
+	//TypeTar  = newType("tar", "application/x-tar")
+	//TypeRar  = newType("rar", "application/x-rar-compressed")
+	//TypeGz   = newType("gz", "application/gzip")
+	//TypeBz2  = newType("bz2", "application/x-bzip2")
+	//Type7z   = newType("7z", "application/x-7z-compressed")
+	//TypeXz   = newType("xz", "application/x-xz")
 	TypePdf  = newType("pdf", "application/pdf")
 	TypeRtf  = newType("rtf", "application/rtf")
 
-	TypePs     = newType("ps", "application/postscript")
-	TypeSqlite = newType("sqlite", "application/x-sqlite3")
-	TypeNes    = newType("nes", "application/x-nintendo-nes-rom")
-	TypeCrx    = newType("crx", "application/x-google-chrome-extension")
-	TypeCab    = newType("cab", "application/vnd.ms-cab-compressed")
-	TypeDeb    = newType("deb", "application/x-deb")
-	TypeAr     = newType("ar", "application/x-unix-archive")
-	TypeZ      = newType("Z", "application/x-compress")
-	TypeLz     = newType("lz", "application/x-lzip")
-	TypeRpm    = newType("rpm", "application/x-rpm")
-	TypeElf    = newType("elf", "application/x-executable")
-	TypeDcm    = newType("dcm", "application/dicom")
-	TypeIso    = newType("iso", "application/x-iso9660-image")
+	//TypePs     = newType("ps", "application/postscript")
+	//TypeSqlite = newType("sqlite", "application/x-sqlite3")
+	//TypeNes    = newType("nes", "application/x-nintendo-nes-rom")
+	//TypeCrx    = newType("crx", "application/x-google-chrome-extension")
+	//TypeCab    = newType("cab", "application/vnd.ms-cab-compressed")
+	//TypeDeb    = newType("deb", "application/x-deb")
+	//TypeAr     = newType("ar", "application/x-unix-archive")
+	//TypeZ      = newType("Z", "application/x-compress")
+	//TypeLz     = newType("lz", "application/x-lzip")
+	//TypeRpm    = newType("rpm", "application/x-rpm")
+	//TypeElf    = newType("elf", "application/x-executable")
+	//TypeDcm    = newType("dcm", "application/dicom")
+	//TypeIso    = newType("iso", "application/x-iso9660-image")
 )
 
 var Archive = Map{
 	TypeEpub: Epub,
-	TypeZip:  Zip,
-	TypeTar:  Tar,
-	TypeRar:  Rar,
-	TypeGz:   Gz,
-	TypeBz2:  Bz2,
-	Type7z:   SevenZ,
-	TypeXz:   Xz,
+	//TypeZip:  Zip,
+	//TypeTar:  Tar,
+	//TypeRar:  Rar,
+	//TypeGz:   Gz,
+	//TypeBz2:  Bz2,
+	//Type7z:   SevenZ,
+	//TypeXz:   Xz,
 	TypePdf:  Pdf,
 	TypeRtf:  Rtf,
 	//TypePs:     Ps,
@@ -44,9 +44,9 @@ var Archive = Map{
 	//TypeCrx:    Crx,
 	//TypeCab:    Cab,
 	//TypeDeb:    Deb,
-	TypeAr: Ar,
+	//TypeAr: Ar,
 	//TypeZ:      Z,
-	TypeLz: Lz,
+	//TypeLz: Lz,
 	//TypeRpm:    Rpm,
 	//TypeElf:    Elf,
 	//TypeDcm:    Dcm,
@@ -65,6 +65,7 @@ func Epub(buf []byte) bool {
 		buf[54] == 0x2B && buf[55] == 0x7A && buf[56] == 0x69 && buf[57] == 0x70
 }
 
+/*
 func Zip(buf []byte) bool {
 	return len(buf) > 3 &&
 		buf[0] == 0x50 && buf[1] == 0x4B &&
@@ -101,6 +102,7 @@ func SevenZ(buf []byte) bool {
 		buf[0] == 0x37 && buf[1] == 0x7A && buf[2] == 0xBC &&
 		buf[3] == 0xAF && buf[4] == 0x27 && buf[5] == 0x1C
 }
+*/
 
 func Pdf(buf []byte) bool {
 	return len(buf) > 3 &&
@@ -115,6 +117,7 @@ func Rtf(buf []byte) bool {
 		buf[4] == 0x66
 }
 
+/*
 func Nes(buf []byte) bool {
 	return len(buf) > 3 &&
 		buf[0] == 0x4E && buf[1] == 0x45 &&
@@ -206,3 +209,4 @@ func Iso(buf []byte) bool {
 		buf[32771] == 0x30 && buf[32772] == 0x30 &&
 		buf[32773] == 0x31
 }
+*/

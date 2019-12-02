@@ -1,5 +1,6 @@
 package matchers
 
+/*
 var (
 	TypeWasm = newType("wasm", "application/wasm")
 	TypeExe  = newType("exe", "application/x-msdownload")
@@ -45,3 +46,5 @@ func Eot(buf []byte) bool {
 			(buf[8] == 0x02 && buf[9] == 0x00 &&
 				buf[10] == 0x02))
 }
+
+*/
