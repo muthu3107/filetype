@@ -7,14 +7,16 @@ var (
 	TypeTtf   = newType("ttf", "application/font-sfnt")
 	TypeOtf   = newType("otf", "application/font-sfnt")
 )
+*/
 
 var Font = Map{
-	TypeWoff:  Woff,
-	TypeWoff2: Woff2,
-	TypeTtf:   Ttf,
-	TypeOtf:   Otf,
+	//TypeWoff:  Woff,
+	//TypeWoff2: Woff2,
+	//TypeTtf:   Ttf,
+	//TypeOtf:   Otf,
 }
 
+/*
 func Woff(buf []byte) bool {
 	return len(buf) > 7 &&
 		buf[0] == 0x77 && buf[1] == 0x4F &&

@@ -7,14 +7,16 @@ var (
 	TypeSwf  = newType("swf", "application/x-shockwave-flash")
 	TypeEot  = newType("eot", "application/octet-stream")
 )
+*/
 
 var Application = Map{
-	TypeWasm: Wasm,
-	TypeExe:  Exe,
-	TypeSwf:  Swf,
-	TypeEot:  Eot,
+	//TypeWasm: Wasm,
+	//TypeExe:  Exe,
+	//TypeSwf:  Swf,
+	//TypeEot:  Eot,
 }
 
+/*
 // Wasm detects a Web Assembly 1.0 filetype.
 func Wasm(buf []byte) bool {
 	// WASM has starts with `\0asm`, followed by the version.
