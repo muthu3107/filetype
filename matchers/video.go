@@ -4,7 +4,8 @@ import "bytes"
 
 var (
 	TypeMp4  = newType("mp4", "video/mp4")
-	TypeM4v  = newType("m4v", "video/x-m4v")
+	TypeM4v  = newType("m4v", "video/m4v")
+	TypeXM4v = newType("m4v", "video/x-m4v")
 	TypeMkv  = newType("mkv", "video/x-matroska")
 	TypeWebm = newType("webm", "video/webm")
 	TypeMov  = newType("mov", "video/quicktime")
@@ -18,6 +19,7 @@ var (
 var Video = Map{
 	TypeMp4:  Mp4,
 	TypeM4v:  M4v,
+	TypeXM4v: M4v,
 	TypeMkv:  Mkv,
 	TypeWebm: Webm,
 	TypeMov:  Mov,
