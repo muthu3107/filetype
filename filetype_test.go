@@ -89,6 +89,7 @@ func TestIsMIMESupported(t *testing.T) {
 		{"foo/bar", false},
 		{"image/png", true},
 		{"video/mpeg", true},
+		{"video/x-m4v", true}, {"video/m4v", true},
 	}
 
 	for _, test := range cases {

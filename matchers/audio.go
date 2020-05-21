@@ -4,6 +4,7 @@ var (
 	TypeMidi = newType("mid", "audio/midi")
 	TypeMp3  = newType("mp3", "audio/mpeg")
 	TypeM4a  = newType("m4a", "audio/m4a")
+	TypeXM4a = newType("xm4a", "audio/x-m4a")
 	TypeOgg  = newType("ogg", "audio/ogg")
 	TypeFlac = newType("flac", "audio/x-flac")
 	TypeWav  = newType("wav", "audio/x-wav")
@@ -15,6 +16,7 @@ var Audio = Map{
 	//TypeMidi: Midi,
 	TypeMp3:  Mp3,
 	TypeM4a:  M4a,
+	TypeXM4a: M4a,
 	TypeOgg:  Ogg,
 	TypeFlac: Flac,
 	TypeWav:  Wav,
