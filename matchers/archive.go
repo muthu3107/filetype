@@ -9,8 +9,8 @@ var (
 	//TypeBz2  = newType("bz2", "application/x-bzip2")
 	//Type7z   = newType("7z", "application/x-7z-compressed")
 	//TypeXz   = newType("xz", "application/x-xz")
-	TypePdf  = newType("pdf", "application/pdf")
-	TypeRtf  = newType("rtf", "application/rtf")
+	TypePdf = newType("pdf", "application/pdf")
+	TypeRtf = newType("rtf", "application/rtf")
 
 	//TypePs     = newType("ps", "application/postscript")
 	//TypeSqlite = newType("sqlite", "application/x-sqlite3")
@@ -36,8 +36,8 @@ var Archive = Map{
 	//TypeBz2:  Bz2,
 	//Type7z:   SevenZ,
 	//TypeXz:   Xz,
-	TypePdf:  Pdf,
-	TypeRtf:  Rtf,
+	TypePdf: Pdf,
+	TypeRtf: Rtf,
 	//TypePs:     Ps,
 	//TypeSqlite: Sqlite,
 	//TypeNes:    Nes,
@@ -105,9 +105,10 @@ func SevenZ(buf []byte) bool {
 */
 
 func Pdf(buf []byte) bool {
+	//Added exta check to verify eOffice PDF files with improper header
 	return len(buf) > 3 &&
-		buf[0] == 0x25 && buf[1] == 0x50 &&
-		buf[2] == 0x44 && buf[3] == 0x46
+		(buf[0] == 0x25 && buf[1] == 0x50 && buf[2] == 0x44 && buf[3] == 0x46) ||
+		(buf[5] == 0x25 && buf[6] == 0x50 && buf[7] == 0x44 && buf[8] == 0x46)
 }
 
 func Rtf(buf []byte) bool {
