@@ -45,7 +45,7 @@ func Doc(buf []byte) bool {
 
 func Docx(buf []byte) bool {
 	typ, ok := msooxml(buf)
-	return ok && typ == TYPE_DOCX
+	return ok && (typ == TYPE_DOCX || typ == TYPE_OOXML)
 }
 
 func Xls(buf []byte) bool {
@@ -58,7 +58,7 @@ func Xls(buf []byte) bool {
 
 func Xlsx(buf []byte) bool {
 	typ, ok := msooxml(buf)
-	return ok && typ == TYPE_XLSX
+	return ok && (typ == TYPE_XLSX || typ == TYPE_OOXML)
 }
 
 func Ppt(buf []byte) bool {
@@ -71,7 +71,12 @@ func Ppt(buf []byte) bool {
 
 func Pptx(buf []byte) bool {
 	typ, ok := msooxml(buf)
-	return ok && typ == TYPE_PPTX
+	return ok && (typ == TYPE_PPTX || typ == TYPE_OOXML)
+}
+
+func Ooxml(buf []byte) bool {
+	typ, ok := msooxml(buf)
+	return ok && typ == TYPE_OOXML
 }
 
 func msooxml(buf []byte) (typ docType, found bool) {
