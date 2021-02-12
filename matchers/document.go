@@ -6,21 +6,27 @@ import (
 )
 
 var (
-	TypeDoc  = newType("doc", "application/msword")
-	TypeDocx = newType("docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
-	TypeXls  = newType("xls", "application/vnd.ms-excel")
-	TypeXlsx = newType("xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
-	TypePpt  = newType("ppt", "application/vnd.ms-powerpoint")
-	TypePptx = newType("pptx", "application/vnd.openxmlformats-officedocument.presentationml.presentation")
+	TypeDoc      = newType("doc", "application/msword")
+	TypeDocx     = newType("docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+	TypeXls      = newType("xls", "application/vnd.ms-excel")
+	TypeXlsx     = newType("xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+	TypePpt      = newType("ppt", "application/vnd.ms-powerpoint")
+	TypePptx     = newType("pptx", "application/vnd.openxmlformats-officedocument.presentationml.presentation")
+	TypeOoxmlDoc = newType("docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+	TypeOoxmlXls = newType("xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+	TypeOoxmlPpt = newType("pptx", "application/vnd.openxmlformats-officedocument.presentationml.presentation")
 )
 
 var Document = Map{
-	TypeDoc:  Doc,
-	TypeDocx: Docx,
-	TypeXls:  Xls,
-	TypeXlsx: Xlsx,
-	TypePpt:  Ppt,
-	TypePptx: Pptx,
+	TypeDoc:      Doc,
+	TypeDocx:     Docx,
+	TypeXls:      Xls,
+	TypeXlsx:     Xlsx,
+	TypePpt:      Ppt,
+	TypePptx:     Pptx,
+	TypeOoxmlDoc: Ooxml,
+	TypeOoxmlXls: Ooxml,
+	TypeOoxmlPpt: Ooxml,
 }
 
 type docType int
@@ -72,6 +78,11 @@ func Ppt(buf []byte) bool {
 func Pptx(buf []byte) bool {
 	typ, ok := msooxml(buf)
 	return ok && (typ == TYPE_PPTX || typ == TYPE_OOXML)
+}
+
+func Ooxml(buf []byte) bool {
+	typ, ok := msooxml(buf)
+	return ok && typ == TYPE_OOXML
 }
 
 func Ooxml(buf []byte) bool {
