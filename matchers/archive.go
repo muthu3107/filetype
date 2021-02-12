@@ -1,5 +1,10 @@
 package matchers
 
+import (
+	"bufio"
+	"bytes"
+)
+
 var (
 	TypeEpub = newType("epub", "application/epub+zip")
 	//TypeZip  = newType("zip", "application/zip")
@@ -105,10 +110,29 @@ func SevenZ(buf []byte) bool {
 */
 
 func Pdf(buf []byte) bool {
+
+	f := bytes.NewBuffer(buf)
+	scanner := bufio.NewScanner(f)
+
+	// Call Split to specify that we want to Scan each individual byte.
+	scanner.Split(bufio.ScanLines)
+
+	// Use For-loop.
+	for scanner.Scan() {
+		// Get Bytes and display the byte.
+		b := scanner.Bytes()
+		if len(b) > 3 &&
+			(b[0] == 0x25 && b[1] == 0x50 && b[2] == 0x44 && b[3] == 0x46) ||
+			(buf[5] == 0x25 && buf[6] == 0x50 && buf[7] == 0x44 && buf[8] == 0x46) {
+			return true
+		}
+	}
+
+	return false
 	//Added exta check to verify eOffice PDF files with improper header
-	return len(buf) > 3 &&
-		(buf[0] == 0x25 && buf[1] == 0x50 && buf[2] == 0x44 && buf[3] == 0x46) ||
-		(buf[5] == 0x25 && buf[6] == 0x50 && buf[7] == 0x44 && buf[8] == 0x46)
+	/*return len(buf) > 3 &&
+	(buf[0] == 0x25 && buf[1] == 0x50 && buf[2] == 0x44 && buf[3] == 0x46) ||
+	(buf[5] == 0x25 && buf[6] == 0x50 && buf[7] == 0x44 && buf[8] == 0x46)*/
 }
 
 func Rtf(buf []byte) bool {
