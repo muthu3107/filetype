@@ -3,7 +3,7 @@ package filetype
 import (
 	"testing"
 
-	"github.com/logicwonder/filetype/types"
+	"github.com/muthu3107/filetype/types"
 )
 
 func TestIs(t *testing.T) {

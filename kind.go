@@ -1,8 +1,8 @@
 package filetype
 
 import (
-	"github.com/logicwonder/filetype/matchers"
-	"github.com/logicwonder/filetype/types"
+	"github.com/muthu3107/filetype/matchers"
+	"github.com/muthu3107/filetype/types"
 )
 
 // Image tries to match a file as image type

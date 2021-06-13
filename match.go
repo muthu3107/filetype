@@ -4,8 +4,8 @@ import (
 	"io"
 	"os"
 
-	"github.com/logicwonder/filetype/matchers"
-	"github.com/logicwonder/filetype/types"
+	"github.com/muthu3107/filetype/matchers"
+	"github.com/muthu3107/filetype/types"
 )
 
 // Matchers is an alias to matchers.Matchers

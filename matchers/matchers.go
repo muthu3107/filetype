@@ -1,7 +1,7 @@
 package matchers
 
 import (
-	"github.com/logicwonder/filetype/types"
+	"github.com/muthu3107/filetype/types"
 )
 
 // Internal shortcut to NewType

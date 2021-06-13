@@ -1,4 +1,4 @@
-# filetype [![Build Status](https://travis-ci.org/h2non/filetype.png)](https://travis-ci.org/h2non/filetype) [![GoDoc](https://godoc.org/github.com/logicwonder/filetype?status.svg)](https://godoc.org/github.com/logicwonder/filetype) [![Go Report Card](http://goreportcard.com/badge/h2non/filetype)](http://goreportcard.com/report/h2non/filetype) [![Go Version](https://img.shields.io/badge/go-v1.0+-green.svg?style=flat)](https://github.com/h2non/gentleman)
+# filetype [![Build Status](https://travis-ci.org/h2non/filetype.png)](https://travis-ci.org/h2non/filetype) [![GoDoc](https://godoc.org/github.com/muthu3107/filetype?status.svg)](https://godoc.org/github.com/muthu3107/filetype) [![Go Report Card](http://goreportcard.com/badge/h2non/filetype)](http://goreportcard.com/report/h2non/filetype) [![Go Version](https://img.shields.io/badge/go-v1.0+-green.svg?style=flat)](https://github.com/h2non/gentleman)
 
 Small and dependency free [Go](https://golang.org) package to infer file and MIME type checking the [magic numbers](https://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files) signature.
 
@@ -21,17 +21,17 @@ For SVG file type checking, see [go-is-svg](https://github.com/h2non/go-is-svg) 
 ## Installation
 
 ```bash
-go get github.com/logicwonder/filetype
+go get github.com/muthu3107/filetype
 ```
 
 ## API
 
-See [Godoc](https://godoc.org/github.com/logicwonder/filetype) reference.
+See [Godoc](https://godoc.org/github.com/muthu3107/filetype) reference.
 
 ### Subpackages
 
-- [`github.com/logicwonder/filetype/types`](https://godoc.org/github.com/logicwonder/filetype/types)
-- [`github.com/logicwonder/filetype/matchers`](https://godoc.org/github.com/logicwonder/filetype/matchers)
+- [`github.com/muthu3107/filetype/types`](https://godoc.org/github.com/muthu3107/filetype/types)
+- [`github.com/muthu3107/filetype/matchers`](https://godoc.org/github.com/muthu3107/filetype/matchers)
 
 ## Examples
 
@@ -44,7 +44,7 @@ import (
   "fmt"
   "io/ioutil"
 
-  "github.com/logicwonder/filetype"
+  "github.com/muthu3107/filetype"
 )
 
 func main() {
@@ -69,7 +69,7 @@ import (
   "fmt"
   "io/ioutil"
 
-  "github.com/logicwonder/filetype"
+  "github.com/muthu3107/filetype"
 )
 
 func main() {
@@ -91,7 +91,7 @@ package main
 import (
   "fmt"
 
-  "github.com/logicwonder/filetype"
+  "github.com/muthu3107/filetype"
 )
 
 func main() {
@@ -120,7 +120,7 @@ import (
   "fmt"
   "io/ioutil"
   
-  "github.com/logicwonder/filetype"
+  "github.com/muthu3107/filetype"
 )
 
 func main() {
@@ -147,7 +147,7 @@ package main
 import (
   "fmt"
   
-  "github.com/logicwonder/filetype"
+  "github.com/muthu3107/filetype"
 )
 
 var fooType = filetype.NewType("foo", "foo/foo")
@@ -273,7 +273,7 @@ func main() {
 
 ## Benchmarks
 
-Measured using [real files](https://github.com/logicwonder/filetype/tree/master/fixtures).
+Measured using [real files](https://github.com/muthu3107/filetype/tree/master/fixtures).
 
 Environment: OSX x64 i7 2.7 Ghz
 

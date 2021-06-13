@@ -3,8 +3,8 @@ package filetype
 import (
 	"errors"
 
-	"github.com/logicwonder/filetype/matchers"
-	"github.com/logicwonder/filetype/types"
+	"github.com/muthu3107/filetype/matchers"
+	"github.com/muthu3107/filetype/types"
 )
 
 // Types stores a map of supported types
