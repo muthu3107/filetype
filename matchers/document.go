@@ -85,10 +85,10 @@ func Ooxml(buf []byte) bool {
 	return ok && typ == TYPE_OOXML
 }
 
-func Ooxml(buf []byte) bool {
-	typ, ok := msooxml(buf)
-	return ok && typ == TYPE_OOXML
-}
+// func Ooxml(buf []byte) bool {
+// 	typ, ok := msooxml(buf)
+// 	return ok && typ == TYPE_OOXML
+// }
 
 func msooxml(buf []byte) (typ docType, found bool) {
 	signature := []byte{'P', 'K', 0x03, 0x04}
