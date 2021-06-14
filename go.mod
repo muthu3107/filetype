@@ -1,3 +1,3 @@
 module github.com/muthu3107/filetype
 
-go 1.16
+go 1.15
